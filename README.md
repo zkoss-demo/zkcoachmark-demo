@@ -1,4 +1,4 @@
-# ZK Demo
+# ZK Coachmark Demo
 
 Example ZK project using gradle
 
@@ -9,7 +9,7 @@ run jetty
 ./gradlew appRun
 ```
 
-http://localhost:8080/zk--demo
+http://localhost:8080/zkcoachmark-demo
 
 run tests
 ```

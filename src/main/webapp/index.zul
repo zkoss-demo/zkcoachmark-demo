@@ -1,3 +1,49 @@
 <zk>
-	Hello world
+	<style>
+		.z-div {
+			border: 1px solid black;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+	<vlayout height="900px">
+		<hlayout vflex="1" width="900px">
+			<div hflex="1">
+				<button label="restart guide" onClick="c1.open()"></button>
+			</div>
+			<div hflex="1">
+				<textbox id="tb" placeholder="type here"></textbox>
+			</div>
+			<div hflex="1"></div>
+		</hlayout>
+		<hlayout vflex="1" width="900px">
+			<div hflex="1"></div>
+			<div hflex="1"></div>
+			<div hflex="1">
+				<panel id="pn" title="panel">
+					<panelchildren>click me!</panelchildren>
+				</panel>
+			</div>
+		</hlayout>
+		<hlayout vflex="1" width="900px">
+			<div hflex="1">
+				<button id="btn" label="finish"></button>
+			</div>
+			<div hflex="1"></div>
+			<div hflex="1"></div>
+		</hlayout>
+	</vlayout>
+	<coachmark id="c1" target="pn" next="c2" position="before_center" onTargetClick="self.next()">
+		<label multiline="true">
+			Wellcome, Let's start the guide!
+			This is a panel!
+		</label>
+	</coachmark>
+	<coachmark id="c2" target="tb" visible="false">
+		<label>You can type something here!</label>
+		<button style="display:block;margin:10px auto;" label="got it!" onClick="c2.next(c3)"></button>
+	</coachmark>
+	<coachmark id="c3" target="btn" position="end_center" visible="false" onTargetClick="self.close()">
+		<label>This is the end, click the button or the close icon to close the final coachmark.</label>
+	</coachmark>
 </zk>
